@@ -1,19 +1,28 @@
 const pages = [
   {
     name: "Home",
-    icon: "home"
+    icon: "home",
+    link: "/"
   },
   {
     name: "For You",
-    icon: "local_fire_department"
+    icon: "local_fire_department",
+    link: "/"
   },
   {
     name: "Notifications",
-    icon: "notifications"
+    icon: "notifications",
+    link: "/"
+  },
+  {
+    name: "Bookmarks",
+    icon: "bookmark",
+    link: "/"
   },
   {
     name: "Profile",
-    icon: "account_circle"
+    icon: "account_circle",
+    link: "/"
   },
 ]
 

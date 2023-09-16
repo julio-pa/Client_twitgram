@@ -8,8 +8,8 @@ const NavBar = () => {
     <div className='pl-12 flex flex-col items-start h-screen'>
       <img src={logo} className='object-cover' />
       <div >
-        {pages.map(({ name, icon }, index) => (
-          <SectionButton key={index} title={name} icon={icon} />
+        {pages.map(({ name, icon, link }, index) => (
+          <SectionButton key={index} title={name} icon={icon} link={link} />
         ))}
       </div>
       <div className='mt-6 w-full flex justify-center items-center'>
@@ -17,7 +17,7 @@ const NavBar = () => {
           type="button"
           className="inline-flex items-center rounded-full border border-transparent bg-blue-400 w-full px-20 py-3 text-xl font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          <Link>tweet</Link>
+          <Link>Tweet</Link>
         </button>
       </div>
     </div>
