@@ -11,7 +11,7 @@ function Layout({ children }) {
         delay: 0.5,
         ease: [0, 0.71, 0.2, 1.01]
       }}
-      className="flex justify-between bg-gradient-to-b from-gray-900 from-30% to-cyan-700 pt-6 h-screen overflow-scroll"
+      className="flex justify-between bg-gradient-to-b from-gray-900 from-30% to-cyan-700 pt-6 h-screen w-screen overflow-scroll"
     >
       {children}
     </motion.div >
