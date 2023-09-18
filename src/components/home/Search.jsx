@@ -2,7 +2,7 @@
 
 const Search = () => {
   return (
-    <div className='w-full'>
+    <div className='my-3 ml-72 mr-72'>
       <label className="relative block">
         <span className="sr-only">Search</span>
         <span className="absolute inset-y-0 left-0 flex items-center pl-2">

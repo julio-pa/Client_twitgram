@@ -5,7 +5,7 @@ import { pages } from '../../mock/MockData';
 
 const NavBar = () => {
   return (
-    <div className='pl-12 flex flex-col items-start h-screen'>
+    <div className='pl-12 flex flex-col items-start h-screen w-72  fixed z-10 left-0 top-0 pt-10 bg-transparent overflow-x-hidden'>
       <img src={logo} className='object-cover' />
       <div >
         {pages.map(({ name, icon, link }, index) => (
