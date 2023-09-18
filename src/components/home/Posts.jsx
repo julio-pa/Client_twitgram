@@ -2,7 +2,7 @@ import PostCard from '../posts/PostCard';
 
 const Posts = () => {
   return (
-    <div className='ml-72 mr-72'>
+    <div>
       <PostCard />
       <PostCard />
       <PostCard />

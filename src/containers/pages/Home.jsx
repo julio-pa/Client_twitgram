@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Layout>
       <NavBar />
-      <div className="w-full flex flex-col py-3 px-9">
+      <div className="w-full flex flex-col py-3 px-9 ml-72 mr-72">
         <Search />
         <Stories />
         <Posts />

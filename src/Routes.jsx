@@ -3,6 +3,10 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Error404 from './containers/errors/Error404';
 import Home from './containers/pages/Home';
+import ForYou from './containers/pages/ForYou';
+import Notifications from './containers/pages/Notifications';
+import Bookmarks from './containers/pages/Bookmarks';
+import Profile from './containers/pages/Profile';
 
 const AnimatedRoutes = () => {
 
@@ -16,6 +20,10 @@ const AnimatedRoutes = () => {
 
         {/* Home Display */}
         <Route path="/" element={<Home />} />
+        <Route path="/foryou" element={<ForYou />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/bookmarks" element={<Bookmarks />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </AnimatePresence>
   );

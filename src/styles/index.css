@@ -6,6 +6,10 @@
   color: white;
 }
 
+body {
+  background-color: black;
+}
+
 .active {
   @apply text-cyan-400
 }
