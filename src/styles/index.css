@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  color: white;
-}
+
 
 body {
   background-color: black;
+  color: #fff;
 }
 
 .active {

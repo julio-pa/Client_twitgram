@@ -7,6 +7,7 @@ import ForYou from './containers/pages/ForYou';
 import Notifications from './containers/pages/Notifications';
 import Bookmarks from './containers/pages/Bookmarks';
 import Profile from './containers/pages/Profile';
+import TweetPost from './containers/pages/TweetPost';
 
 const AnimatedRoutes = () => {
 
@@ -24,6 +25,7 @@ const AnimatedRoutes = () => {
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/tweetpost" element={<TweetPost />} />
       </Routes>
     </AnimatePresence>
   );
