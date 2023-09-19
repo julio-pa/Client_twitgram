@@ -9,8 +9,9 @@ const PostCard = () => {
   const [book, setBook] = useState(false);
   const [styleBook, setStyleBook] = useState('');
 
-  const stylesheart = `material-symbols-sharp cursor-pointer hover:text-red-500 ${styleLike}`
-  const stylesbook = `material-symbols-sharp cursor-pointer hover:text-yellow-500 ${styleBook}`
+  const stylesheart = `cursor-pointer hover:text-red-500 ${styleLike}`
+  const stylesbook = `cursor-pointer hover:text-yellow-500 ${styleBook}`
+  const normalStyle = "cursor-pointer hover:text-cyan-400"
 
   const addLike = () => {
     setLike(!like)
@@ -44,24 +45,30 @@ const PostCard = () => {
           <img src="https://th.bing.com/th/id/OIP.4F0j9TOEdVKB_bfu8wU_-QHaFj?pid=ImgDet&rs=1" className="h-80 w-full object-fill rounded-2xl cursor-pointer" />
         </div>
       </div>
-      <div className="flex justify-between md:px-14 my-6">
-        <span className="material-symbols-sharp cursor-pointer">
-          chat
-        </span>
-        <span className="material-symbols-sharp cursor-pointer">
-          autorenew
-        </span>
-        <span onClick={addLike} className={stylesheart}>
-          favorite
-        </span>
-        <span onClick={addbook} className={stylesbook}>
-          bookmark
-        </span>
+      <div className="flex justify-between md:px-14 my-6 border-t border-gray-400 pt-6">
+        <PostButtom icon='chat' count='777' style={normalStyle} />
+        <PostButtom icon='autorenew' count='777' style={normalStyle} />
+        <PostButtom icon='favorite' count='777' style={stylesheart} turn={addLike} />
+        <PostButtom icon='bookmark' count='777' style={stylesbook} turn={addbook} />
       </div>
     </div >
   );
 
 }
+
+import React from 'react';
+
+const PostButtom = ({ icon, count, style, turn }) => {
+  return (
+    <div className={`flex gap-2	items-center ${style}`} >
+      <span onClick={turn} className="material-symbols-sharp">
+        {icon}
+      </span>
+      <p>{count}</p>
+    </div >
+  );
+}
+
 
 
 export default PostCard;
