@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PostCard from '../posts/PostCard';
 import { get_tweets_list } from '../../redux/actions/tweets/tweets'
 import { useEffect } from 'react';
@@ -11,7 +12,7 @@ const Posts = ({
 
   useEffect(() => {
     get_tweets_list()
-  }, []);
+  }, [get_tweets_list]);
 
   return (
     <div>
@@ -27,6 +28,7 @@ const mapStateToProps = state => ({
   count: state.tweets.count,
   next: state.tweets.next,
   previous: state.tweets.previous,
+  images: state.images.url_img
 })
 
 export default connect(mapStateToProps, {
