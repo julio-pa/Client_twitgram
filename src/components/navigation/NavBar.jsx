@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/twitgramlogo.png'
+import logo from '../../assets/twitgram_logo.svg'
 import SectionButton from '../navbar/SectionButton';
 import { pages } from '../../mock/MockData';
 import TweetButton from '../navbar/TweetButton';

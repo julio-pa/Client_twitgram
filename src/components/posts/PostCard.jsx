@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import Avatar from "../home/Avatar";
+// import not_found from '../../assets/img_not_found.jpg'
 
 
 const PostCard = ({

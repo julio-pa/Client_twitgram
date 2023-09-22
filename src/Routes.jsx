@@ -8,6 +8,7 @@ import Notifications from './containers/pages/Notifications';
 import Bookmarks from './containers/pages/Bookmarks';
 import Profile from './containers/pages/Profile';
 import TweetPost from './containers/pages/TweetPost';
+import Login from './containers/pages/Login';
 
 const AnimatedRoutes = () => {
 
@@ -21,6 +22,7 @@ const AnimatedRoutes = () => {
 
         {/* Home Display */}
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/foryou" element={<ForYou />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
