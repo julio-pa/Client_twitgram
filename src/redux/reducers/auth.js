@@ -7,6 +7,8 @@ import {
   PERFIL_LOADED_FAIL,
   AUTHENTICATED_SUCCESS,
   AUTHENTICATED_FAIL,
+  REFRESH_SUCCESS,
+  REFRESH_FAIL,
   SIGNUP_SUCCESS,
   SIGNUP_FAIL,
   LOGOUT
@@ -53,6 +55,12 @@ export default function (state = initialState, action) {
         ...state,
         perfil: payload.perfil
       }
+    case REFRESH_SUCCESS:
+      localStorage.setItem('access', payload.access);
+      return {
+        ...state,
+        access: localStorage.getItem('access')
+      }
     case AUTHENTICATED_FAIL:
       return {
         ...state,
@@ -69,6 +77,7 @@ export default function (state = initialState, action) {
         perfil: null
       }
     case LOGIN_FAIL:
+    case REFRESH_FAIL:
     case SIGNUP_FAIL:
     case LOGOUT:
       localStorage.removeItem('access');

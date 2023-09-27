@@ -1,11 +1,12 @@
 import { connect } from "react-redux"
 import { motion } from 'framer-motion'
-import { checkAuthenticated, load_user } from '../../redux/actions/users/auth';
+import { checkAuthenticated, load_user, refresh } from '../../redux/actions/users/auth';
 import { useEffect } from "react";
 
-function Layout({ checkAuthenticated, load_user, children }) {
+function Layout({ checkAuthenticated, load_user, refresh, children }) {
 
   useEffect(() => {
+    refresh()
     checkAuthenticated();
     load_user();
   }, []);
@@ -30,4 +31,4 @@ function Layout({ checkAuthenticated, load_user, children }) {
 
 // })
 
-export default connect(null, { checkAuthenticated, load_user })(Layout);
+export default connect(null, { checkAuthenticated, load_user, refresh })(Layout);

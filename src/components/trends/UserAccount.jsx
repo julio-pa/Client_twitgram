@@ -15,7 +15,7 @@ const UserAccount = ({ logout, user, perfil, load_perfil }) => {
   };
 
   const getUsername = async () => {
-    const Username = await user?.username
+    const Username = await user.username
     return load_perfil(Username)
   }
 
@@ -26,7 +26,7 @@ const UserAccount = ({ logout, user, perfil, load_perfil }) => {
   return (
     <div className="flex items-center justify-between px-6">
       <div className="flex items-center gap-3">
-        <Avatar perfil={perfil.img_perfil} />
+        <Avatar perfil={perfil?.img_perfil} />
         <h3 className="uppercase text-xl fo font-semibold">{user?.username}</h3>
         <h3 className="text-cyan-400 font-semibold cursor-pointer border-b border-transparent hover:border-white" onClick={logout_user}>Logout</h3>
       </div>
