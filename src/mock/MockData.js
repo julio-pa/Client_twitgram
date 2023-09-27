@@ -2,7 +2,7 @@ const pages = [
   {
     name: "Home",
     icon: "home",
-    link: "/"
+    link: "/home"
   },
   {
     name: "For You",

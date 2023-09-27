@@ -9,6 +9,7 @@ import Bookmarks from './containers/pages/Bookmarks';
 import Profile from './containers/pages/Profile';
 import TweetPost from './containers/pages/TweetPost';
 import Login from './containers/pages/Login';
+import SignUp from './containers/pages/SignUp';
 
 const AnimatedRoutes = () => {
 
@@ -21,7 +22,9 @@ const AnimatedRoutes = () => {
         <Route path="*" element={<Error404 />} />
 
         {/* Home Display */}
-        <Route path="/" element={<Home />} />
+        <Route index element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/foryou" element={<ForYou />} />
         <Route path="/notifications" element={<Notifications />} />

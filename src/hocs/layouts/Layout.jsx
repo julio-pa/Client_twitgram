@@ -1,7 +1,15 @@
 import { connect } from "react-redux"
 import { motion } from 'framer-motion'
+import { checkAuthenticated, load_user } from '../../redux/actions/users/auth';
+import { useEffect } from "react";
 
-function Layout({ children }) {
+function Layout({ checkAuthenticated, load_user, children }) {
+
+  useEffect(() => {
+    checkAuthenticated();
+    load_user();
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0.7, }}
@@ -18,10 +26,8 @@ function Layout({ children }) {
   )
 }
 
-const mapStateToProps = state => ({
+// const mapStateToProps = state => ({
 
-})
+// })
 
-export default connect(mapStateToProps, {
-
-})(Layout)
+export default connect(null, { checkAuthenticated, load_user })(Layout);
