@@ -9,6 +9,7 @@ const UserAccount = ({ logout, user, perfil, load_perfil }) => {
 
   const navigate = useNavigate()
 
+
   const logout_user = () => {
     logout();
     navigate('/signup')

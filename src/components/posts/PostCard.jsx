@@ -57,9 +57,9 @@ const PostCard = ({
         <div className="my-3" >
           {data.description}
         </div>
-        <div className="w-full">
+        <div className="w-full flex items-center justify-center">
           {data.thumbnail
-            ? <img id={index} src={`${data?.thumbnail}`} className="h-80 w-full object-fill rounded-2xl cursor-pointer" />
+            ? <img id={index} src={`${data?.thumbnail}`} className="h-80  object-contain rounded-2xl cursor-pointer" />
             : null}
         </div>
       </div>
