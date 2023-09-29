@@ -2,7 +2,9 @@ import axios from "axios";
 
 import {
   GET_TWEETS_LIST_SUCCESS,
-  GET_TWEETS_LIST_FAIL
+  GET_TWEETS_LIST_FAIL,
+  POST_TWEET_SUCCESS,
+  POST_TWEET_FAIL,
 } from './types'
 
 export const get_tweets_list = () => async dispatch => {
@@ -28,6 +30,30 @@ export const get_tweets_list = () => async dispatch => {
   } catch (err) {
     dispatch({
       type: GET_TWEETS_LIST_FAIL
+    })
+  }
+}
+
+export const post_tweet = (user, description, thumbnail) => async dispatch => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+
+  const body = JSON.stringify({ user, description, thumbnail });
+  console.log(body)
+
+  try {
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/tweet/create`, body, config);
+
+    dispatch({
+      type: POST_TWEET_SUCCESS,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: POST_TWEET_FAIL
     })
   }
 }

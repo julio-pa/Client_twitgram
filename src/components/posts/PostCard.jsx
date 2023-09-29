@@ -45,8 +45,8 @@ const PostCard = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Avatar perfil={data?.user?.img_perfil} />
-          <h3 className="text-xl font-semibold">{data?.user.username}</h3>
-          <h3 className="text-lg font-light text-gray-400">@{data?.user.username}</h3>
+          <h3 className="text-xl font-semibold">{data?.user?.username}</h3>
+          <h3 className="text-lg font-light text-gray-400">@{data?.user?.username}</h3>
           <h3 className="text-lg font-light text-gray-400">{date}</h3>
         </div>
         <span className="material-symbols-sharp cursor-pointer">
