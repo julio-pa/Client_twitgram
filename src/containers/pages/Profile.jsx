@@ -14,7 +14,7 @@ import { load_perfil } from '../../redux/actions/users/auth';
 const Profile = ({ perfil }) => {
 
   let options = { year: 'numeric', month: 'short', day: 'numeric' };
-  const date = new Date(perfil.joined)
+  const date = new Date(perfil?.joined)
     .toLocaleDateString('en', options)
     .replace(/ /g, '-')
     .replace('.', '')

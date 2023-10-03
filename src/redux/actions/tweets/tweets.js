@@ -33,15 +33,18 @@ export const get_tweets_list = () => async dispatch => {
     })
   }
 }
-
-export const post_tweet = (user, description, thumbnail) => async dispatch => {
+// user, description, thumbnail
+export const post_tweet = (body) => async dispatch => {
   const config = {
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'multipart/form-data',
+      'X-CSRFToken': `${localStorage.getItem('csrftoken')}`
+      // 'Accept': 'application/json',
+      // 'Authorization': `Bearer ${localStorage.getItem('csrftoken')}`
     }
   };
 
-  const body = JSON.stringify({ user, description, thumbnail });
+  // const body = JSON.stringify(data);
   console.log(body)
 
   try {
