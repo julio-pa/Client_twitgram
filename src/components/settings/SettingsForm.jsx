@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import { update_profile, load_user } from '../../redux/actions/users/auth'
 import { connect } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const SettingsForm = ({ update_profile, user, load_user }) => {
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     load_user()
@@ -40,7 +43,7 @@ const SettingsForm = ({ update_profile, user, load_user }) => {
     const final_data = await createMyModelEntry(formData)
 
     update_profile(final_data)
-    // navigate('/')
+    navigate('/profile')
 
   };
 
