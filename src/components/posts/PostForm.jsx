@@ -1,20 +1,21 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { post_tweet } from '../../redux/actions/tweets/tweets';
-// import API from '../../mock/API'
+
 
 
 
 const PostForm = ({ post_tweet, user }) => {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const [errors, setErrors] = useState({
-    user: "",
-    description: "",
-    thumbnail: "",
-  });
+  // const [errors, setErrors] = useState({
+  //   user: "",
+  //   description: "",
+  //   thumbnail: "",
+  // });
 
   const [formData, setFormData] = useState({
     user: user.id,
@@ -43,7 +44,6 @@ const PostForm = ({ post_tweet, user }) => {
     form_data.append("description", data.description);
     return formData
   }
-  // createMyModelEntry(formData, id_user)
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ const PostForm = ({ post_tweet, user }) => {
         onChange={e => handleChange(e)}
         required ></textarea>
       <h3 className="py-3 text-2xl font-bold">Image</h3>
-      <input name='thumbnail' type="file" accept='image/*' className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-cyan-500 hover:file:bg-violet-100"
+      <input name='thumbnail' type="file" accept='.png, .jpg, .jpeg' className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-cyan-500 hover:file:bg-violet-100"
         onChange={e => handleImageChange(e)} />
       <button
         type="submit"

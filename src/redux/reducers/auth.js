@@ -5,6 +5,8 @@ import {
   USER_LOADED_FAIL,
   PERFIL_LOADED_SUCCESS,
   PERFIL_LOADED_FAIL,
+  UPDATE_PERFIL_SUCCESS,
+  UPDATE_PERFIL_FAIL,
   USERS_LIST_LOADED_SUCCESS,
   USERS_LIST_LOADED_FAIL,
   AUTHENTICATED_SUCCESS,
@@ -46,7 +48,7 @@ export default function (state = initialState, action) {
     case SIGNUP_SUCCESS:
       return {
         ...state,
-        isAuthenticated: false
+        isAuthenticated: true
       }
     case USER_LOADED_SUCCESS:
       return {
@@ -57,6 +59,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         perfil: payload.perfil
+      }
+    case UPDATE_PERFIL_SUCCESS:
+      return {
+        ...state,
+
       }
     case USERS_LIST_LOADED_SUCCESS:
       return {
@@ -78,6 +85,10 @@ export default function (state = initialState, action) {
       return {
         ...state,
         user: null
+      }
+    case UPDATE_PERFIL_FAIL:
+      return {
+        ...state
       }
     case PERFIL_LOADED_FAIL:
       return {

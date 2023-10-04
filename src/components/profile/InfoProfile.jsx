@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import FilterButtom from '../notifications/FilterButtom';
 import AvatarProfile from './AvatarProfile';
 
@@ -14,7 +15,8 @@ const InfoProfile = ({ user, accountname, imgperfil }) => {
           @{accountname}
         </div>
       </div>
-      <FilterButtom title='Edit' />
+
+      <FilterButtom title='Edit' link='/settings' />
     </div>
   );
 }

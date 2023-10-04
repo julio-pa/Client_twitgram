@@ -11,6 +11,7 @@ import TweetPost from './containers/pages/TweetPost';
 import Login from './containers/pages/Login';
 import SignUp from './containers/pages/SignUp';
 import ProtectedRoutes from './hocs/ProtectedRoutes';
+import Settings from './containers/pages/Settings';
 
 const AnimatedRoutes = () => {
 
@@ -33,6 +34,7 @@ const AnimatedRoutes = () => {
           <Route path="/bookmarks" element={<Bookmarks />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/tweetpost" element={<TweetPost />} />
+          <Route path="/settings" element={<Settings />} />
         </Route>
       </Routes>
     </AnimatePresence>

@@ -6,6 +6,8 @@ import {
   USER_LOADED_FAIL,
   PERFIL_LOADED_SUCCESS,
   PERFIL_LOADED_FAIL,
+  UPDATE_PERFIL_SUCCESS,
+  UPDATE_PERFIL_FAIL,
   USERS_LIST_LOADED_SUCCESS,
   USERS_LIST_LOADED_FAIL,
   AUTHENTICATED_SUCCESS,
@@ -17,7 +19,31 @@ import {
   LOGOUT
 } from './types';
 
-export const load_users_list = (username) => async dispatch => {
+export const update_profile = (body) => async dispatch => {
+  const config = {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'X-CSRFToken': `${localStorage.getItem('csrftoken')}`
+    }
+  };
+
+  // console.log(body)
+
+  try {
+    const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/user/update`, body, config);
+
+    dispatch({
+      type: UPDATE_PERFIL_SUCCESS,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: UPDATE_PERFIL_FAIL
+    })
+  }
+}
+
+export const load_users_list = () => async dispatch => {
   if (localStorage.getItem('access')) {
     const config = {
       headers: {
