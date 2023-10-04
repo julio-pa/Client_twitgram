@@ -54,7 +54,7 @@ const PostCard = ({
         </span>
       </div>
       <div className="my-3 flex flex-col justify-start md:px-14">
-        <div className="my-3" >
+        <div className="my-3 text-lg" >
           {data.description}
         </div>
         <div className="w-full flex items-center justify-center">

@@ -5,6 +5,8 @@ import {
   USER_LOADED_FAIL,
   PERFIL_LOADED_SUCCESS,
   PERFIL_LOADED_FAIL,
+  USERS_LIST_LOADED_SUCCESS,
+  USERS_LIST_LOADED_FAIL,
   AUTHENTICATED_SUCCESS,
   AUTHENTICATED_FAIL,
   REFRESH_SUCCESS,
@@ -19,7 +21,8 @@ const initialState = {
   refresh: localStorage.getItem('refresh'),
   isAuthenticated: null,
   user: null,
-  perfil: null
+  perfil: null,
+  usersList: null
 };
 
 export default function (state = initialState, action) {
@@ -55,6 +58,11 @@ export default function (state = initialState, action) {
         ...state,
         perfil: payload.perfil
       }
+    case USERS_LIST_LOADED_SUCCESS:
+      return {
+        ...state,
+        usersList: payload.results.users
+      }
     case REFRESH_SUCCESS:
       localStorage.setItem('access', payload.access);
       return {
@@ -75,6 +83,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         perfil: null
+      }
+    case USERS_LIST_LOADED_FAIL:
+      return {
+        ...state,
+        usersList: null
       }
     case LOGIN_FAIL:
     case REFRESH_FAIL:

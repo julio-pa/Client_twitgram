@@ -6,6 +6,8 @@ import {
   USER_LOADED_FAIL,
   PERFIL_LOADED_SUCCESS,
   PERFIL_LOADED_FAIL,
+  USERS_LIST_LOADED_SUCCESS,
+  USERS_LIST_LOADED_FAIL,
   AUTHENTICATED_SUCCESS,
   AUTHENTICATED_FAIL,
   REFRESH_SUCCESS,
@@ -14,6 +16,35 @@ import {
   SIGNUP_FAIL,
   LOGOUT
 } from './types';
+
+export const load_users_list = (username) => async dispatch => {
+  if (localStorage.getItem('access')) {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    }
+
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/users`, config);
+
+      dispatch({
+        type: USERS_LIST_LOADED_SUCCESS,
+        payload: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: USERS_LIST_LOADED_FAIL,
+      });
+    }
+
+  } else {
+    dispatch({
+      type: USERS_LIST_LOADED_FAIL
+    });
+  }
+}
 
 export const load_perfil = (username) => async dispatch => {
   if (localStorage.getItem('access')) {
