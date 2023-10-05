@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { post_tweet } from '../../redux/actions/tweets/tweets';
 
@@ -9,7 +9,7 @@ import { post_tweet } from '../../redux/actions/tweets/tweets';
 
 const PostForm = ({ post_tweet, user }) => {
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   // const [errors, setErrors] = useState({
   //   user: "",
@@ -50,14 +50,13 @@ const PostForm = ({ post_tweet, user }) => {
     const final_data = await createMyModelEntry(formData)
 
     post_tweet(final_data)
-    // navigate('/')
+    setTimeout(() => {
+      navigate('/home')
+    }, 5000);
 
   };
 
-  // if (TweetPost) {
-  //   // return navigate('/home')
-  //   alert('tweetpost')
-  // }
+
 
   return (
     <form onSubmit={e => onSubmit(e)} encType='multipart/formdata'>
