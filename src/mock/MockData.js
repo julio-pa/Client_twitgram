@@ -26,4 +26,31 @@ const pages = [
   },
 ]
 
-export { pages }
+const IconsBar = [
+  {
+    icon: "home",
+    link: "/home"
+  },
+  {
+    icon: "local_fire_department",
+    link: "/foryou"
+  },
+  {
+    icon: "add_circle",
+    link: "/tweetpost"
+  },
+  {
+    icon: "notifications",
+    link: "/notifications"
+  },
+  // {
+  //   icon: "bookmark",
+  //   link: "/bookmarks"
+  // },
+  {
+    icon: "account_circle",
+    link: "/profile"
+  },
+]
+
+export { pages, IconsBar }

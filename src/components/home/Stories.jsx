@@ -10,7 +10,7 @@ const Stories = ({ load_users_list, usersList }) => {
   }, [])
 
   return (
-    <div className='flex gap-6 py-6'>
+    <div className='flex gap-6 py-6 max-sm:overflow-x-scroll max-sm:overflow-y-clip'>
       {usersList && usersList.map((data, index) => (
         <div key={index} className='flex flex-col gap-1 items-center text-base'>
           <Avatar perfil={data.img_perfil} />

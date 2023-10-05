@@ -12,6 +12,7 @@ const PostCard = ({
 
 
   const [like, setLike] = useState(false);
+  const [numLike, setNumLike] = useState(0);
   const [styleLike, setStyleLike] = useState('');
   const [book, setBook] = useState(false);
   const [styleBook, setStyleBook] = useState('');
@@ -22,9 +23,13 @@ const PostCard = ({
 
   const addLike = () => {
     setLike(!like)
-    like
-      ? setStyleLike('text-red-500')
-      : setStyleLike('')
+    if (like) {
+      setStyleLike('text-red-500')
+      setNumLike(1)
+    } else {
+      setStyleLike('')
+      setNumLike(0)
+    }
   }
   const addbook = () => {
     setBook(!book)
@@ -46,7 +51,7 @@ const PostCard = ({
         <div className="flex items-center gap-4">
           <Avatar perfil={data?.user?.img_perfil} />
           <h3 className="text-xl font-semibold">{data?.user?.username}</h3>
-          <h3 className="text-lg font-light text-gray-400">@{data?.user?.username}</h3>
+          <h3 className="text-lg font-light text-gray-400 max-sm:hidden">@{data?.user?.username}</h3>
           <h3 className="text-lg font-light text-gray-400">{date}</h3>
         </div>
         <span className="material-symbols-sharp cursor-pointer">
@@ -66,7 +71,7 @@ const PostCard = ({
       <div className="flex justify-between md:px-14 my-6 border-t border-gray-400 pt-6">
         <PostButtom icon='chat' count='777' style={normalStyle} />
         <PostButtom icon='autorenew' count='777' style={normalStyle} />
-        <PostButtom icon='favorite' count={data?.likes} style={stylesheart} turn={addLike} />
+        <PostButtom icon='favorite' count={data?.likes + numLike} style={stylesheart} turn={addLike} />
         <PostButtom icon='bookmark' count='777' style={stylesbook} turn={addbook} />
       </div>
     </div >

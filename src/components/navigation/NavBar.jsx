@@ -7,7 +7,7 @@ import TweetButton from '../navbar/TweetButton';
 const NavBar = () => {
   return (
     <div
-      className='pl-12 flex flex-col items-start h-screen w-72  fixed z-10 left-0 top-0 pt-10 bg-transparent overflow-x-hidden'>
+      className='pl-12 flex flex-col items-start h-screen w-72  fixed z-10 left-0 top-0 pt-10 bg-transparent overflow-x-hidden max-sm:hidden'>
       <Link to='/' className='cursor-pointer'>
         <img src={logo} className='object-cover' />
       </Link>

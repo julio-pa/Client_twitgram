@@ -38,7 +38,7 @@ const SignUpForm = ({ signup, isAuthenticated }) => {
   }
 
   return (
-    <div className=' w-3/4 p-3 flex flex-col justify-center gap-3'>
+    <div className=' w-3/4 p-3 flex flex-col justify-center gap-3 max-sm:w-full'>
       <form className="flex flex-col gap-3 " onSubmit={e => onSubmit(e)}>
         <label className="font-semibold text-lg">Username</label>
         <input name='username' type="text" maxLength="64" className="text-black rounded-full border-4 border-transparent p-1 outline-none focus:border-cyan-400" placeholder="Username" value={username}
@@ -60,7 +60,7 @@ const SignUpForm = ({ signup, isAuthenticated }) => {
       </form>
       <p className=" text-gray-400 text-xs">By registering, you agree to the Terms of Service and Privacy Policy, including the Use of Cookies policy.</p>
       <div className="text-2xl font-semibold">Already have an account?</div>
-      <Link to='/login' className="bg-transparent border rounded-full px-60 py-4 font-semibold text-xl hover:bg-blue-400">Sign in</Link>
+      <Link to='/login' className="bg-transparent border rounded-full px-60 py-4 font-semibold text-xl hover:bg-blue-400 max-sm:px-6 text-center">Sign in</Link>
     </div>
   );
 }

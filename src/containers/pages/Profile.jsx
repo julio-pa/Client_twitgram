@@ -23,7 +23,7 @@ const Profile = ({ perfil }) => {
   return (
     <Layout>
       <NavBar />
-      <div className="w-full min-h-screen flex flex-col py-3  ml-72 border-l border-gray-400">
+      <div className="w-full min-h-screen flex flex-col py-3  ml-72 border-l border-gray-400 max-sm:mx-1">
         <ProfileHeader user={perfil?.username} counter='473' />
         <Banner banner={perfil?.banner} />
         <InfoProfile user={perfil?.username} accountname={perfil?.username} imgperfil={perfil?.img_perfil} />

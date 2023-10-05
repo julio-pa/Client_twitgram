@@ -28,8 +28,10 @@ const UserAccount = ({ logout, user, perfil, load_perfil }) => {
     <div className="flex items-center justify-between px-6">
       <div className="flex items-center gap-3">
         <Avatar perfil={perfil?.img_perfil} />
-        <h3 className="uppercase text-xl fo font-semibold">{user?.username}</h3>
-        <h3 className="text-cyan-400 font-semibold cursor-pointer border-b border-transparent hover:border-white" onClick={logout_user}>Logout</h3>
+        <div>
+          <h3 className="uppercase text-xl fo font-semibold">{user?.username}</h3>
+          <h3 className="text-cyan-400 font-semibold cursor-pointer border-b border-transparent hover:border-white" onClick={logout_user}>Logout</h3>
+        </div>
       </div>
       <span className="material-symbols-sharp cursor-pointer">
         settings

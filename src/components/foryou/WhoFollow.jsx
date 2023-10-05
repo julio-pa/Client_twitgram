@@ -10,7 +10,7 @@ const WhoFollow = ({ load_users_list, usersList }) => {
     load_users_list()
   }, [])
   return (
-    <div className=" w-80  fixed z-10 right-0 top-0  bg-transparent overflow-x-hidden border border-gray-400 mx-6 mt-12 p-6 rounded-lg">
+    <div className=" w-80  fixed z-10 right-0 top-0  bg-transparent overflow-x-hidden border border-gray-400 mx-6 mt-12 p-6 rounded-lg max-md:hidden">
       <h3 className='text-xl font-bold mb-3'>Who to follow</h3>
       {usersList && usersList.map((data, index) => (
         <AccountCard index={index} data={data} />
